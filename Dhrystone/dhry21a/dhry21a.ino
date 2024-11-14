@@ -107,7 +107,11 @@ void setup() {
         /* Warning: With 16-Bit processors and Number_Of_Runs > 32000,  */
         /* overflow may occur for this array element.                   */
 
-  Number_Of_Runs = 300000;
+  //Number_Of_Runs = 300000; original
+  Number_Of_Runs = 1000000;  
+  // When the clock frequency is high(ex: RP2350/w 150 MHz), the program may finish too quickly.
+  // As a result, measuring becomes difficult, so we increase the number of executions.
+
   
   Serial.print(F("Execution starts, "));
   Serial.print(Number_Of_Runs);
